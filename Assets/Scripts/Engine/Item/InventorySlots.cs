@@ -27,6 +27,7 @@ public class InventorySlots  {
 
 	/// <summary>
 	/// Add the item to the specified slot.
+	/// Slot will be inferred from the item.
 	/// </summary>
 	/// <param name="item">Item.</param>
 	public void Add(Item item) {
@@ -40,7 +41,16 @@ public class InventorySlots  {
 		}
 
 		// Add item to slot
-		_items.Add (slotType, item);
+		Add(slotType, item);
+	}
+
+	/// <summary>
+	/// Add the item to the specified slot.
+	/// </summary>
+	/// <param name="slotType">Slot type.</param>
+	/// <param name="item">Item.</param>
+	public void Add(InventorySlots.SlotType slotType, Item item) {
+		_items.Add(slotType, item);
 	}
 
 	/// <summary>

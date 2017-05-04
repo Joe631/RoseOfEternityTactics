@@ -1070,6 +1070,10 @@ Prefab:
       propertyPath: _speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11406050, guid: 43eb2cdf1c6c044e3b526d33b83a2978, type: 2}
+      propertyPath: resRef
+      value: muck_petty
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43eb2cdf1c6c044e3b526d33b83a2978, type: 2}
   m_IsPrefabParent: 0
@@ -3498,6 +3502,10 @@ Prefab:
     - target: {fileID: 11406050, guid: 43eb2cdf1c6c044e3b526d33b83a2978, type: 2}
       propertyPath: _speed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406050, guid: 43eb2cdf1c6c044e3b526d33b83a2978, type: 2}
+      propertyPath: resRef
+      value: muck_petty
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43eb2cdf1c6c044e3b526d33b83a2978, type: 2}
@@ -8275,6 +8283,7 @@ GameObject:
   - 4: {fileID: 761158075}
   - 114: {fileID: 761158076}
   - 114: {fileID: 761158077}
+  - 114: {fileID: 761158078}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -8315,6 +8324,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0d03e869b7414d088611ed33e442086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &761158078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 761158074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 711e479bec62a41ca93cfc374d07ccc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &762861761
@@ -11151,6 +11171,10 @@ Prefab:
       propertyPath: _speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11406050, guid: 43eb2cdf1c6c044e3b526d33b83a2978, type: 2}
+      propertyPath: resRef
+      value: muck_petty
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43eb2cdf1c6c044e3b526d33b83a2978, type: 2}
   m_IsPrefabParent: 0
@@ -11891,6 +11915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a35fff9dce784408160595056bebf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resRef: sinteres
   firstName: Sinteres
   lastName: 
   class: Daishan Assassin
@@ -14355,6 +14380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a35fff9dce784408160595056bebf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resRef: aramus
   firstName: Aramus
   lastName: Galladoran
   class: Kilveran Swordsman
@@ -16368,6 +16394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a35fff9dce784408160595056bebf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resRef: jarl
   firstName: Jarl
   lastName: Thuvik
   class: Stramadonian Seeker
@@ -16875,6 +16902,10 @@ Prefab:
     - target: {fileID: 11406050, guid: 43eb2cdf1c6c044e3b526d33b83a2978, type: 2}
       propertyPath: _speed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406050, guid: 43eb2cdf1c6c044e3b526d33b83a2978, type: 2}
+      propertyPath: resRef
+      value: muck_petty
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43eb2cdf1c6c044e3b526d33b83a2978, type: 2}
@@ -18715,6 +18746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a35fff9dce784408160595056bebf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resRef: orelle
   firstName: Orelle
   lastName: 
   class: Knight of Dundalas

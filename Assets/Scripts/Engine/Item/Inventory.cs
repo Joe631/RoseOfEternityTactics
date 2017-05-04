@@ -40,6 +40,18 @@ public class Inventory {
 	}
 
 	/// <summary>
+	/// Gets the item by id.
+	/// </summary>
+	/// <returns>The by identifier.</returns>
+	/// <param name="id">Identifier.</param>
+	public Item GetById(int id) {
+		foreach (Item item in _items)
+			if (item.Id == id)
+				return item;
+		return null;
+	}
+
+	/// <summary>
 	/// Gets the first item by name.
 	/// </summary>
 	/// <returns>The first item by name.</returns>

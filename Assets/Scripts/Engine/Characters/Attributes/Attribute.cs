@@ -5,7 +5,6 @@ using System.Collections;
 
 namespace RoseOfEternity {
 	
-	[System.Serializable]
 	public class Attribute {
 
 		private float _currentValue;

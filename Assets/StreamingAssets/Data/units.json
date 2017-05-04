@@ -1,0 +1,114 @@
+{
+  "Units": [
+    {
+      "ResRef": "aramus",
+      "FirstName": "Aramus",
+      "LastName": "Galladoran",
+      "Class": "Kilveran Swordsman",
+      "PortraintLocation": "Pixels/Portrait/p-aramus",
+      "Attributes": {
+        "EXPERIENCE": 0.0,
+        "LEVEL": 5.0,
+        "HIT_POINTS": 17.0,
+        "ABILITY_POINTS": 10.0,
+        "MOVEMENT": 5.0,
+        "SPEED": 6.0,
+        "DEXTERITY": 4.0,
+        "MAGIC": 3.0,
+        "STRENGTH": 10.0,
+        "DEFENSE": 8.0
+      },
+      "Inventory": {
+        "RIGHT_HAND": 0
+      }
+    },
+    {
+      "ResRef": "sinteres",
+      "FirstName": "Sinteres",
+      "LastName": "",
+      "Class": "Daishan Assassin",
+      "PortraintLocation": "Pixels/Portrait/p-sinteres",
+      "Attributes": {
+        "EXPERIENCE": 0.0,
+        "LEVEL": 1.0,
+        "HIT_POINTS": 15.0,
+        "ABILITY_POINTS": 10.0,
+        "MOVEMENT": 5.0,
+        "SPEED": 8.0,
+        "DEXTERITY": 14.0,
+        "MAGIC": 1.0,
+        "STRENGTH": 6.0,
+        "DEFENSE": 6.0
+      },
+      "Inventory": {
+        "RIGHT_HAND": 1
+      }
+    },
+    {
+      "ResRef": "orelle",
+      "FirstName": "Orelle",
+      "LastName": "",
+      "Class": "Knight of Dundalas",
+      "PortraintLocation": "Pixels/Portrait/p-orelle",
+      "Attributes": {
+        "EXPERIENCE": 0.0,
+        "LEVEL": 4.0,
+        "HIT_POINTS": 20.0,
+        "ABILITY_POINTS": 6.0,
+        "MOVEMENT": 4.0,
+        "SPEED": 3.0,
+        "DEXTERITY": 2.0,
+        "MAGIC": 1.0,
+        "STRENGTH": 13.0,
+        "DEFENSE": 10.0
+      },
+      "Inventory": {
+        "RIGHT_HAND": 2
+      }
+    },
+    {
+      "ResRef": "jarl",
+      "FirstName": "Jarl",
+      "LastName": "Thuvik",
+      "Class": "Stramadonian Seeker",
+      "PortraintLocation": "Pixels/Portrait/p-jarl",
+      "Attributes": {
+        "EXPERIENCE": 0.0,
+        "LEVEL": 3.0,
+        "HIT_POINTS": 10.0,
+        "ABILITY_POINTS": 15.0,
+        "MOVEMENT": 4.0,
+        "SPEED": 6.0,
+        "DEXTERITY": 3.0,
+        "MAGIC": 10.0,
+        "STRENGTH": 4.0,
+        "DEFENSE": 4.0
+      },
+      "Inventory": {
+        "RIGHT_HAND": 3
+      }
+    },
+    {
+      "ResRef": "muck_petty",
+      "FirstName": "Petty Muck",
+      "LastName": "",
+      "Class": "Monster",
+      "PortraintLocation": "Pixels/Portrait/p-muck_petty",
+      "Attributes": {
+        "EXPERIENCE": 0.0,
+        "LEVEL": 4.0,
+        "HIT_POINTS": 10.0,
+        "ABILITY_POINTS": 5.0,
+        "MOVEMENT": 5.0,
+        "SPEED": 4.0,
+        "DEXTERITY": 6.0,
+        "MAGIC": 1.0,
+        "STRENGTH": 8.0,
+        "DEFENSE": 8.0
+      },
+      "Inventory": {
+        "RIGHT_HAND": 23
+      }
+    }
+  ]
+}

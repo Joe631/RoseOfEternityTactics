@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using RoseOfEternity;
 
@@ -18,8 +19,7 @@ public abstract class Unit : MonoBehaviour {
 
 	protected const float HIGHTLIGHT_COLOR_TRANSPARENCY = 0.7f;
 
-	public Dictionary<int, int> test;
-
+	public string resRef;
 	public string firstName = "Unknown";
 	public string lastName = "";
 
@@ -28,14 +28,6 @@ public abstract class Unit : MonoBehaviour {
 	// Core attributes
 	[SerializeField] private int _totalHitPoints = 1;
 	[SerializeField] private int _totalAbilityPoints = 1;
-	[SerializeField] private int _level = 1;
-	[SerializeField] private int _movement = 4;
-
-	[SerializeField] private int _strength = 1;
-	[SerializeField] private int _defense = 1;
-	[SerializeField] private int _dexterity = 1;
-	[SerializeField] private int _speed = 3;
-	[SerializeField] private int _magic = 1;
 	public int weaponRange = 1;
 
 	public string weaponName;
@@ -60,6 +52,8 @@ public abstract class Unit : MonoBehaviour {
 	private Inventory _inventory;
 	private InventorySlots _inventorySlots;
 
+	private UnitData _unitData;
+
 	// Use this for initialization
 	void Start () {
 		CurrentHitPoints = _totalHitPoints;
@@ -67,25 +61,15 @@ public abstract class Unit : MonoBehaviour {
 		CurrentExperiencePoints = 0;
 		_unitAnimationController = transform.Find ("Sprite").GetComponent<UnitAnimationController> ();
 		_spriteRenderer = transform.Find ("Sprite").GetComponent<SpriteRenderer> ();
-		_attributeCollection = AttributeLoader.GetUnitAttributes ();
+		_unitData = UnitDataManager.Instance.GlobalUnitDataCollection.GetByResRef (resRef).DeepCopy();
+		_attributeCollection = _unitData.AttributeCollection;
+		SetMaximumValueToCurrentValue (AttributeEnums.AttributeType.HIT_POINTS);
+		SetMaximumValueToCurrentValue (AttributeEnums.AttributeType.ABILITY_POINTS);
+		_inventorySlots = _unitData.InventorySlots;
+	}
 
-		_inventorySlots = new InventorySlots ();
-		_inventory = new Inventory ();
-		string weaponName = "Sword of Galladoran";
-		if (firstName == "Sinteres")
-			weaponName = "Daishan Dagger";
-		else if (firstName == "Aramus")
-			weaponName = "Sword of Galladoran";
-		else if (firstName == "Jarl")
-			weaponName = "Wand of Power";
-		else if (firstName == "Orelle")
-			weaponName = "Dundalan Axe";
-		else if (firstName == "Petty Muck")
-			weaponName = "Muck";
-
-		_inventory.Add(ItemManager.Instance.GlobalInventory.GetFirstItemByName(weaponName).DeepCopy());
-		_inventorySlots.Add(_inventory.GetFirstItemByName(weaponName));
-		SetAttributes();
+	private void SetMaximumValueToCurrentValue(AttributeEnums.AttributeType type) {
+		_attributeCollection.Get (type).MaximumValue = _attributeCollection.Get (type).CurrentValue;
 	}
 
 	private int CurrentHitPoints { get; set; }
@@ -98,6 +82,10 @@ public abstract class Unit : MonoBehaviour {
 	// Implement these in children classes
 	public abstract Color MovementTileColor { get; }
 	public abstract bool IsPlayerControlled { get; }
+
+	public UnitData GetUnitData() {
+		return _unitData;
+	}
 
 	/// <summary>
 	/// Gets the full name.
@@ -304,41 +292,6 @@ public abstract class Unit : MonoBehaviour {
 	}
 	public Attribute GetSpeedAttribute() {
 		return GetAttribute (AttributeEnums.AttributeType.SPEED);
-	}
-
-	/// <summary>
-	/// Sets the attributes for the unit.
-	/// </summary>
-	private void SetAttributes() {
-
-		// Level
-		GetLevelAttribute().CurrentValue = _level;
-
-		// Hit points
-		GetHitPointsAttribute().MaximumValue = _totalHitPoints;
-		GetHitPointsAttribute().CurrentValue = CurrentHitPoints;
-
-		// Ability Points
-		GetAbilityPointsAttribute().MaximumValue = _totalAbilityPoints;
-		GetAbilityPointsAttribute ().CurrentValue = CurrentAbilityPoints;
-
-		// Movement
-		GetMovementAttribute().CurrentValue = _movement;
-
-		// Speed
-		GetSpeedAttribute().CurrentValue = _speed;
-
-		// Strength
-		_attributeCollection.Get (AttributeEnums.AttributeType.STRENGTH).CurrentValue = _strength;
-
-		// Defense
-		_attributeCollection.Get (AttributeEnums.AttributeType.DEFENSE).CurrentValue = _defense;
-
-		// Dexterity
-		_attributeCollection.Get (AttributeEnums.AttributeType.DEXTERITY).CurrentValue = _dexterity;
-
-		// Magic
-		_attributeCollection.Get (AttributeEnums.AttributeType.MAGIC).CurrentValue = _magic;
 	}
 
 	public Item GetItemInSlot(InventorySlots.SlotType slotType) {
